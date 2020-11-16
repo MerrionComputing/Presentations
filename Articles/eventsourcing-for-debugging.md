@@ -2,7 +2,11 @@
 
 ## It started with a tweet....
 
+I wrote this tweet last weekend after I had been doing some investigating of a sporadic defect in a piece of software I have been working on for a few years: 
+
 ![](../tweet-sourcing.jpg)
+
+It got quite a reaction so I thought I would expand on it to explain the how and the why of this statement.
 
 ## Backstory: The airplane that crashed twice
 
