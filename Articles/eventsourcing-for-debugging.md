@@ -8,7 +8,8 @@ I wrote this tweet last weekend after I had been doing some investigating of a s
 
 It got quite a reaction so I thought I would expand on it to explain the how and the why of this statement.
 
-## Backstory: The airplane that crashed twice
+## Time, the great disruptor
+
 
 ## Event sourcing - making the hidden clues visible
 
