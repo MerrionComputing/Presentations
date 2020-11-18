@@ -10,6 +10,7 @@ It got quite a reaction so I thought I would expand on it to explain the how and
 
 ## Time, the great disruptor
 
+Once you have passed the stage of educated guesswork the next process in diagnostic debugging of a production issue involves attempting to recreate the state as at which the defect manifested itself and then stepping through the code from that state so as to _catch the bug in the act_ as it happened.  This is both difficult and time consuming.
 
 ## Event sourcing - making the hidden clues visible
 
