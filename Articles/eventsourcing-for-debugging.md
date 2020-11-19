@@ -18,7 +18,7 @@ The difficulty is that the state as I find it when I start my debugging efforts 
 
 ## Event sourcing - making the hidden clues visible
 
-Because event sourcing entails storing the history of all the actions that have occured to an entity and deriving the state from that it is possible to read back through that history in order to establish what the state was at a given point in time.  This really comes into its own when you are debugging a situation where one process changes an entity state and a subsequent process changes it back again.  
+Because event sourcing entails storing the history of all the actions that have occured to an entity and deriving the state from that, it is possible to read back through that history in order to establish what the state was at a given point in time.  This really comes into its own when you are debugging a situation where one process changes an entity state and a subsequent process changes it back again.  
 
 ## Making it even clearer
 
