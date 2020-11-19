@@ -14,6 +14,8 @@ The first thing I tent to try when I encounter a production bug is educated gues
 
 Once I have passed the stage of educated guesswork the next process in diagnostic debugging of a production issue involves attempting to recreate the state as at which the defect manifested itself and then stepping through the code from that state so as to _catch the bug in the act_ as it happened.  This is both difficult and time consuming.  It requires finding out when the cause occurred, what the source code was at the time and what the state of all the entities or records involved in the issue were at that time.  In truth, this too is largely guesswork.
 
+The difficulty is that the state as I find it when I start my debugging efforts may not be the same as the state was when the defect manifested itself.  Transactions may have rolled back or other processes my have successfully completed which overwrote that data I need to get back to my starting point.  As things like microservices and queue fed systems became the norm this already difficult task has become nearly impossible.
+
 ## Event sourcing - making the hidden clues visible
 
 Because event sourcing entails storing the history of all the actions that have occured to an entity and deriving the state from that it is possible to read back through that history in order to establish what the state was at a given point in time.  This really comes into its own when you are debugging a situation where one process changes an entity state and a subsequent process changes it back again.  
