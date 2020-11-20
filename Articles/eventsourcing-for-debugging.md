@@ -24,7 +24,15 @@ Because event sourcing entails storing the history of all the actions that have 
 
 In addition, the fact that my events are stored in my event stream using business-meaningful event names means I can see what actual event occured that caused the bug to manifest. This means that, not only is the initial state easier to determine, but also the area of processing that is most likely to have been in progress when the bug occured. You can almost imagine it as being a log written in and through your data.
 
-## Making it even clearer
+## Show-and-tell
+
+To illustrate this let me give you an (anonymized and simplified) example.  A few weeks ago while doing some financial reconciliations for a client we realised that they had overpaid their taxes due that quarter.  This is not the worst thing that can happen with regard to taxation but it is still pretty bad.  The amount of tax due was a function of the amount of profit so as I dug down I realised that it had to be due to overvaluation of the profit - but looking at the accounts as they currently stood did not seem to show any issue.
+
+To restore the data to the start of the quarter and then step through the code for each of the transactions was a non starter - there were several thousand transactions per day and a slew of prices and exchange rates and so on that also have an impact.  Moreover the reconciliation at the transaction level showed that all the expected transactions were present and therefore the cause of this issue had to be some timing or other transient type of cause.
+
+Fortunately the system is event sourced with all of the instruments, exchange rates and so on backed by their own event streams, which meant it was possible to get back to the exact state as at which the tax calculation was performed. From this we could see that the calculation was correct _given the state of the system at that time_.  From there it was a quick job to find the differences between then and now that had impacted the profit of the account and we rapidly tracked the difference down to a late receipt of a price record.  
+
+## Making things even clearer
 
 There are a couple of extra things you can do whenever you are working with event sourced systems which will make your debugging experience even better. The first is to add correlation identifiers to any related events (for example, events that come from the same command) which you can then use to search your event streams for all the matching events.
 
