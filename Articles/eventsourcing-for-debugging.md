@@ -34,7 +34,7 @@ To restore the data to the start of the quarter and then step through the code f
 
 Fortunately the system is event sourced with all of the instruments, exchange rates and so on backed by their own event streams, which meant it was possible to get back to the exact state as at which the tax calculation was performed. From this we could see that the calculation was correct _given the state of the system at that time_.  From there it was a quick job to find the differences between then and now that had impacted the profit of the account and we rapidly tracked the difference down to a late receipt of a price record.  
 
-![]("../event sourced accounting.jpg")
+![](../event_sourced_accounting.jpg)
 
 ## Making things even clearer
 
