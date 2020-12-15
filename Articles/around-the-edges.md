@@ -14,4 +14,8 @@ A decision will need to be made about the frequency of this snapshotting and als
 
 ### Change feed subscription
 
+Some model based systems (for example some relational databases) support a change feed - a way of sending out notifications whenever the underlying state model is changed.  _It is important to note that this change feed is conceptually different to event sourced data as it is focussed on what has changed rather than why)._
+
 ### Snapshots and deltas
+
+Where a model based system does not support a change feed there will be a need to artificially create one yourself.  This involves keeping a local copy of whatever component(s) of that model based state you are interested in and periodically getting the current state of these components then comparing the two and, if differences exist, generating events accordingly.  The frequency of this operation will need to be decided on a business need basis but it should be granular enough to allow for a meaningful change history to be recreated.
