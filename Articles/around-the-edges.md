@@ -18,7 +18,7 @@ A decision will need to be made about the frequency of this snapshotting and als
 
 ### Change feed subscription
 
-Some model based systems (for example some relational databases) support a change feed - a way of sending out notifications whenever the underlying state model is changed.  _It is important to note that this change feed is conceptually different to event sourced data as it is focussed on what has changed rather than why)._
+Some model based systems (for example some relational databases) support a change feed - a way of sending out notifications whenever the underlying state model is changed.  _(It is important to note that this change feed is conceptually different to event sourced data as it is focussed on what has changed rather than why)._
 
 ### Snapshots and deltas
 
