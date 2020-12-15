@@ -10,6 +10,10 @@ At its simplest the process of getting data from an event sourced system to a mo
 
 A decision will need to be made about the frequency of this snapshotting and also how any merging with the existing model based data is done.  One strategy that can help is the idea of having a set of staging tables that the event sourced data is pushed into on each update allowing for a controlled merge thereafter.
 
+### Turning events into commands
+
+
+
 ## From model based systems to event sourced systems
 
 ### Change feed subscription
