@@ -11,3 +11,10 @@ If your business domain is one that understands the concept of ledgers then *Led
 ## Event Driven Architecutre
 
 In an event driven architecture, events are emitted by one part of a system and other part(s) act on receipt of those events.  In this usage an event is present tense and there is no expectation that it should be kept forever.  
+
+## Domain Events
+
+## Integration Events
+
+Integration events are sent between domains, or between (micro)services to keep them in synch with each other's internal state - which we need to do because every domain or (micro)service must own its own private copy of whatever state it relies upon.  Sometimes these are used to trigger an action in the recipient as well in which case they become more like a *command*.
+
