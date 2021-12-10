@@ -1,6 +1,6 @@
 # We need to STOP talking about events
 
-*Event* sourcing, *event* driven architecture, domain *events*, integration *events*.... oh my.
+*Event* sourcing, *event* driven architecture, domain *events*, integration *events*, *event* storming / *event* modelling.... oh my.
 
 ## Event Sourcing
 
@@ -14,7 +14,13 @@ In an event driven architecture, events are emitted by one part of a system and 
 
 ## Domain Events
 
+
+
 ## Integration Events
 
 Integration events are sent between domains, or between (micro)services to keep them in synch with each other's internal state - which we need to do because every domain or (micro)service must own its own private copy of whatever state it relies upon.  Sometimes these are used to trigger an action in the recipient as well in which case they become more like a *command*.
+
+## Event storming / Event Modelling
+
+Event storming and event modelling are business process discovery and analysis mechanisms which use "the things that can happen" (known as the events) and what we expect our system to do as a result of this.  
 
