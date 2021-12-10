@@ -8,7 +8,7 @@ In an event sourced system the events are the source of the state(s) of the syst
 
 If your business domain is one that understands the concept of ledgers then *Ledger Backed State* might be a better name.  If not, maybe use *History Derived State* ?
 
-## Event Driven Architecutre
+## Event Driven Architecture
 
 In an event driven architecture, events are emitted by one part of a system and other part(s) act on receipt of those events.  In this usage an event is present tense and there is no expectation that it should be kept forever.  
 
