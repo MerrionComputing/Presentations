@@ -25,6 +25,10 @@ However both transactions and locks solve the concurrency problem by **change pr
 
 ## Solution 3: **Undo**, redo, undo etc.
 
+In this alternative approach, you allow the arrowof time to continue and check as or after your change is to be committed whether the state could have changed while you were processing the command.
+
+![](../undo_redo_loop.jpg)
+
 ## Solution 3b: **Re-run** on fault
 
 ## Solution 4: Look **behind** you
