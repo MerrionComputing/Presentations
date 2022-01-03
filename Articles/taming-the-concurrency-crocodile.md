@@ -1,5 +1,7 @@
 # Taming the Concurrency Crocodile
 
+![](../concurrency_crocodile.jpg)
+
 ## What is the **problem**?
 
 At its most basic a computer program can be broken down into two components: first get the current state and then perform some action based on that state.  The problem with this is that this takes a finite amount of time which means there is a risk that the current state you are acting on may not be current any more.
