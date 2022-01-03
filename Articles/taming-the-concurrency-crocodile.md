@@ -29,9 +29,19 @@ In this alternative approach, you allow the arrowof time to continue and check a
 
 ![](../undo_redo_loop.jpg)
 
+In order to know that the state has changed while you were processing it you would need to get the top sequence number of the event stream(s) that went into the projections which supplied you with the state you are acting on and to only commit the new event(s) for the command if the top sequence number has not changed.  Most event sourcing implementations provide this capability for just this use case.
+
 ## Solution 3b: **Re-run** on fault
 
+![](../re_run.jpg)
+
 ## Solution 4: Look **behind** you
+
+In some circumstances it is possible to reframe the business rule such that it refers to some prior state.  For example you might have a rule like "interest on the accopunt is calculated according to the balance _as of midnight on the trading day_ ..." 
+
+![](../prior_state.jpg)
+
+Since, in an event sourced system, prior state is immutable you can use that fact to run the process after the cut-off time but only project the state up to that cut-off time.  This eliminates the concurrency crocodile altogether.
 
 ## Wrapping it up
 
