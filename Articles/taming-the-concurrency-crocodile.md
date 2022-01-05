@@ -33,7 +33,11 @@ In order to know that the state has changed while you were processing it you wou
 
 ## Solution 3b: **Re-run** on fault
 
+A slightly easier way of achieving this is based on the **saga pattern** and consists of undoing and redoing the command in its entirety if any part of it has a concurrency crocodile issue detected.
+
 ![](../re_run.jpg)
+
+This can work quite well if there are relatively few concurrency clashes and every part of a command has a compensation defined to undo it if the _rollback and retry_ is needed.
 
 ## Solution 4: Look **behind** you
 
@@ -45,5 +49,14 @@ Since, in an event sourced system, prior state is immutable you can use that fac
 
 ## Wrapping it up
 
+As is often the case there is no _one size fits all_ solution here - which one(s) you use and where is one of those *it depends* decisions.  
+
+If your system is a line of business type of system that has operates synchronously and the user interface is interacting with humans then one of the two change prevention strategies will be easiest.  In practice this would nearly always mean relying on transactions provided by the underlying storage technology.  
+
+The optimistic concurrency of an undo-redo-undo or saga process is a better option of asynchronous systems and anything connecting to wait intolerant systems.
+
+Rewriting the business rule to work behind the current state is, of course, something that needs to be discussed with the business but there are many business domains that have operated in a distributed model that already cater for this way of operating.  
+
 ## Other possibilities
 
+One possibility is to **do nothing** - If the cost of a concurrency issue is low it may be possible just to ignore the problem altogether 
