@@ -17,3 +17,7 @@ These functions get the current state of some entity (or entities), make a decis
 ## Decision based commands with side effects
 
 These functions act on an existing state and/or input parameters to trigger an action to take place external to the function.  For exampel a function to delete a file or to send an email might fall into this catregory.  Although these functions don't have to save local state it is considered good practice for them to store an audit trail of any actions they trigger so that there is a reduced chance of duplicate actions.
+
+## Persisted state
+
+Where a serverless function needs access to persisted state there are two ways that this can be achieved - either by a _shared present state_ such as a file or database record, or by a _shared event history_ as used in **event sourced** state systems.
