@@ -21,3 +21,5 @@ These functions act on an existing state and/or input parameters to trigger an a
 ## Persisted state
 
 Where a serverless function needs access to persisted state there are two ways that this can be achieved - either by a _shared present state_ such as a file or database record, or by a _shared event history_ as used in **event sourced** state systems.
+
+For an event sourced state that is being used in a serverless system my recomendation would be only to create the state (by running a projection) when it is going to be used - in effect an entity only needs to have a state when that state is being queried or used.
