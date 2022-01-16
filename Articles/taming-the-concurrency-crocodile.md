@@ -4,7 +4,7 @@
 
 ## What is the **problem**?
 
-At its most basic a computer program can be broken down into two components: first get the current state and then perform some action based on that state.  The problem with this is that this takes a finite amount of time which means there is a risk that the current state you are acting on may not be current any more.
+At its most basic a computer program can be broken down into two components: the firststep is to get the current state and then the second step is to perform some action based on that state.  The problem with this is that this takes a finite amount of time, which means there is a risk that the current state you are acting on may not be current any more.
 
 It isn't really a defect as such but more an innevitable fact that we have to be aware of and take steps to mitigate.  I have called it a concurrency crocodile as a crocodile is an ambush predator that catches the unwary.
 
