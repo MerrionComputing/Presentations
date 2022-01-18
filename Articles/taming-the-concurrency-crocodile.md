@@ -14,6 +14,8 @@ The traditional solution to the concurrency crocodile is to perform the get-then
 
 Within a transaction you want to do as little work as you can, as they do become a performance bottle neck in a large or distributed system.  You also need to plan for what you are going to do if the transaction gets rolled back for any reason - if a _real world_ thing has happened and you have no record of it this may be as serious as a concurrency error.
 
+_add why this "one-size fits all" doesn't work, how event sourcing is different to this_
+
 ## Solution 2: **Locks on crocs**
 
 An alternative that is very closely related to transactions is to use writer locks to ensure that only one process is allowed to write to an event stream at any given point in time.  This guarantees that if you have acquired the lock then no other party can come along and change your state whilst you were processing based on it.
