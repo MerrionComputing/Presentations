@@ -27,8 +27,20 @@ A special case is where you want to run a projection over all the event streams.
 
 ### Known fixed set
 
+Where your query is to be run for a pre-known fixed set of event streams you can simply supply them as input parameters to the query of have a configuration file containing that set.
+
 ### Those that "Are currently x"
+
+A more common type fo query constraing is to perform a query "for those event streams that are in a given state x".  Doing this type of query requires a two-step process where we run a projection to get the value of "are in a given state x" and then pass on those to the next step in the query. 
 
 ### Those that "Were ever x"
 
-## "Who -> When -> What -> What" - the full query process
+Using the immutability of event streams we can also perform a query "for those event streams that were every in a given state x".  This is an incredibly powerful aspect of querying over event streams and something that would be really difficult to do in an SQL present-tense state system.
+
+## "Who -> When -> What -> What Next" - the full query process
+
+The full process of querying an event stream based system then becomes a series of steps with the final step being "what do you do with the projections you ran".  It might be as simple as returning a row for each one or you can apply some form of aggregation functionality (SUM, AVG etc.) as required.
+
+## Comparing queries
+
+By storing the query instance itself on an event stream and storing the data returned from each step as events in that event stream it is possible to repeat a query at a later date and to then compare the two query event streams to find what components of the result itself have changed between runs.  In financial services systems this is a very powerful capability.
