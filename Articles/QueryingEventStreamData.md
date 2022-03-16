@@ -1,4 +1,4 @@
-# Querying event stream data
+# Directly querying event stream data
 
 ## "What" - getting the state
 
